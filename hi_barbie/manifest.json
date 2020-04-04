@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "HiBarbie",
-  "version": "0.0.0.3",
+  "version": "0.0.0.4",
   "description": "Life in plastic, it's fantastic!",
   "icons": {
     "16": "extension_icons/hibarbie-16.png",
@@ -22,8 +22,5 @@
         "content_scripts/hibarbie.js"
       ]
     }
-  ],
-  "permissions": [
-    "activeTab"
   ]
 }
