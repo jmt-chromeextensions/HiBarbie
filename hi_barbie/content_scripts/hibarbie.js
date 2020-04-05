@@ -9,16 +9,11 @@ $(document).ready(function() {
 
 	// Since new <a> elements added to the page are wanted to behave the same way, this MutationObserver
 	// is used to detect when they are included so the click handler can be assigned to them too.
-	var mutationObs = new MutationObserver(function (mutations) {
-		for (let i = 0, length = mutations.length; i < length; i++) {
-			if (mutations[i].addedNodes[0]) {
-				$(mutations[i].addedNodes[0]).find("a").each(function () {
-					$(this).click(function() {
-						forgetItGoPlayBarbieGirl();
-					});
-				});
-			}
-		}
+	var mutationObs = new MutationObserver(function () {
+		$("a:not(.barbified-link)").each(function () {
+			$(this).addClass("barbified-link");
+			$(this).click(forgetItGoPlayBarbieGirl);
+		});
 	});
 
 	// Initialize observation
