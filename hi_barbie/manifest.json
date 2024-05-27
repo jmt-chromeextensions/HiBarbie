@@ -1,7 +1,7 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "HiBarbie",
-  "version": "0.0.0.7",
+  "version": "1.0.0.1",
   "description": "Life in plastic, it's fantastic!",
   "icons": {
     "16": "extension_icons/hibarbie-16.png",
@@ -9,13 +9,12 @@
     "48": "extension_icons/hibarbie-48.png",
     "128": "extension_icons/hibarbie-128.png"
   },
-  "browser_action": {
+  "action": {
     "default_title": "Hi, Barbie!"
   },
 
   "background": {
-    "scripts": ["background_scripts/initialize_extension.js"],
-    "persistent": false
+    "service_worker": "background_scripts/initialize_extension.js"
   },
   "content_scripts": [
     {
@@ -30,7 +29,5 @@
     }
   ],
   
-  "permissions": [
-    "*://*/*"
-  ]
+  "host_permissions": ["https://*/*"]
 }
